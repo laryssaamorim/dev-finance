@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev.finances</title>
+    <link rel="icon" href="img/favicon.svg"> 
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tablet.css">
+    <link rel="stylesheet" href="css/smarthphone.css">
+</head>
+<body>
+    <header class="header"> 
+        <div class="container"> 
+            <a href="index.html" class="grid-4">
+            <img src="img/devfinances.svg" alt="devfinances">
+            <span class="mobile-btn"></span>
+        </a>
+        <nav class="grid-12 header_menu mobile_menu">
+            <ul>
+                <li><a href="#introduction">Início</a></li>
+                <li><a href="#options">Sobre</a></li>
+                <li><a href="#contactus">Contato</a></li>
+            </ul>
+        </nav>
+
+        </div>
+    </header>
+
+<!-- Introdução -->
+
+    <section class="introducao" id="introducao"> 
+        <div class="container">
+            <h1> Monitore suas finanças no painel em tempo real </h1>
+            <img src="img/man-computer.svg" alt="Man Computer">
+                </div>
+
+        </div>
+
+    </section>
+
+    <!-- Fecha Introdução -->
+
+    <!-- Principais Características -->
+
+    <section class="container caracteristicas">
+        <h3>Principais <br> características</h3>
+        <p>Com o Dev.finances você pode gerenciar facilmente seu orçamento familiar,
+            controlar gastos e economizar agora mesmo! Mantenha suas finanças sob
+            controle! Tudo muito confortável e simples e, principalmente, rápido e
+            fácil</p>
+
+        <div class="container">
+            <img src="img/relogio.svg" alt="Relógio" id="relogio">
+            <img src="img/widget.svg" alt="Widget" id="widget">
+            <img src="img/performance.svg" alt="Performance" id="performance">
+
+            <p id="texto_relogio">
+                Monitoramento <br>24/7
+            </p>
+
+            <p id="texto_widget">
+                Sistema Widget
+            </p>
+
+            <p id="texto_performance">
+                Melhor performance
+            </p>
+        </div>
+        </section>
+
+ <!-- Fecha Características -->
+
+ <!-- Finanças -->
+
+ <section class="card">
+    <div class="container">
+    <h3>Comece agora!</h3>
+    
+    <section class="container">
+        <div class="card-1">
+            <h3>
+                <span>
+                    Entradas
+                </span>
+                <img src="img/entradas.svg" alt="Imagem de entradas">
+            </h3>
+            <p id="incomeDisplay">R$ 0,00</p>
+        </div>
+    
+        <div class="card-2">
+            <h3>
+                <span>
+                    Saídas
+                </span>
+                <img src="img/saidas.svg" alt="Imagem de saídas">
+            </h3>
+            <p id="expenseDisplay">R$ 0,00</p>
+        </div>
+    
+        <div class="card-3">
+            <h3>
+                <span>
+                    Total
+                </span>
+                <img src="img/total.svg" alt="Imagem de total">
+            </h3>
+            <p id="totalDisplay">R$ 0,00</p>
+        </div>
+
+
+ <!-- Fecha Características -->
+
+ <!-- Transações -->
+
+</section>
+
+<section id="transaction">
+
+    <a href="#" 
+    onclick="Modal.open()"
+    class="button new">+ Nova Transação</a>
+    
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tr>
+            <td class="descricao">Luz</td>
+            <td class="valor">- R$ 500,00</td>
+            <td class="data">23/01/2021</td>
+            <td>
+                <img src="img/remover.svg" alt="Remover transação">
+            </td>
+        </tr>
+        <tr>
+            <td class="descricao">Criação de Website</td>
+            <td class="valor"> R$ 5000,00</td>
+            <td class="data">23/01/2021</td>
+            <td>
+                <img src="img/remover.svg" alt="Remover transação">
+            </td>
+        </tr>
+        <tr>
+            <td class="descricao">Internet</td>
+            <td class="valor">- R$ 200,00</td>
+            <td class="data">23/01/2021</td>
+            <td>
+                <img src="img/remover.svg" alt="Remover transação">
+            </td>
+        </tr>
+    </table>
+</section>
+</main>
+
+<div class="modal-overlay">
+<div class="modal">
+    <div id="form">
+        <h2>Nova Transação</h2>
+        <form action="" onsubmit="Form.submit(event)">
+            <div class="input-group">
+                <label 
+                    class="sr-only" 
+                    for="description">Descrição</label>
+                <input 
+                    type="text" 
+                    id="description" 
+                    name="description"
+                    placeholder="Descrição"
+                />
+            </div>
+
+            <div class="input-group">
+                <label 
+                    class="sr-only" 
+                    for="amount">Valor</label>
+                <input 
+                    type="number"
+                    step="0.01"
+                    id="amount" 
+                    name="amount"
+                    placeholder="0,00"
+                />
+                <small class="help">Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais</small>
+            </div>
+
+            <div class="input-group">
+                <label 
+                    class="sr-only" 
+                    for="date">Data</label>
+                <input 
+                    type="date" 
+                    id="date" 
+                    name="date"
+                />
+            </div>
+
+            <div class="input-group actions">
+                <a 
+                onclick="Modal.close()"
+                href="#" 
+                class="button cancel">Cancelar</a>
+                <button>Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+   
+<!-- Fecha Transações -->
+
+<!-- Contato -->
+
+        <section class="container contact" id="contactus">
+            <h3>Contato</h3>
+                <p>Entre em contato conosco</p>
+            </section>
+        
+            <form action="#" method="post">
+                <fieldset class="container">
+                            <input type="text" id="name" name="nome" value="Your name *">
+                        <input type="text" id="email" name="email" value="Your email *">
+                        <textarea rows="6" id="message" name="message">Message *</textarea>
+                        <button type="submit" id="subimit" name="submit">Submit</button>
+                </fieldset>
+            </form>
+        
+        <!-- Fecha Contato -->
+
+        <div class="modal-overlay">
+
+        </div>
+
+        <!-- Footer -->
+             
+
+
+
+<!-- Close Footer -->
+  
+
+<script>
+   const Modal = {
+   open() {
+       // Abrir modal
+       // Adicionar a class active ao modal
+       document.querySelector('.model-overlay')
+       .classList
+       .add('active')
+   },
+   close() {
+       // Fechar o modal
+       // Remover a class active do modal
+       document.querySelector('.model-overlay')
+       .classList
+       .remove('active')
+   }
+}
+
+</script>
+
+</body>
+
+</html>
